@@ -11,7 +11,7 @@ export default class AdminController {
     res.send("Hello")
   }
 
-  register_routes(app: Express) {
+  registerRoutes(app: Express) {
     app.get("/test", this.testHandler)
   }
 }

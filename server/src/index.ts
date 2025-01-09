@@ -24,7 +24,7 @@ let adminRepo = new AdminRepository(db)
 //controllers
 let adminControllers = new AdminController(adminRepo)
 
-adminControllers.register_routes(app)
+adminControllers.registerRoutes(app)
 
 app.listen(port, async () => {
   let version = await db`select version()`
