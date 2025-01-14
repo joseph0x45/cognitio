@@ -7,11 +7,15 @@ export default class AdminController {
     this.adminRepo = adminRepo
   }
 
-  testHandler(_: Request, res: Response){
-    res.send("Hello")
+  login(req: Request, res: Response) {
+    try {
+
+    } catch (error) {
+      console.log("Error while logging in", error)
+    }
   }
 
   registerRoutes(app: Express) {
-    app.get("/test", this.testHandler)
+    app.post("/admin/login", this.login)
   }
 }

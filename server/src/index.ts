@@ -1,4 +1,4 @@
-import express, { Express } from "express";
+import express, { Express, Response, Request } from "express";
 import dotenv from "dotenv";
 import postgres from "postgres";
 import AdminRepository from "./repository/admin";
@@ -11,6 +11,12 @@ const port = process.env.PORT || 3000;
 const dbUser = process.env.DB_USER || "postgres"
 const dbPassword = process.env.DB_USER || "password"
 const dbName = process.env.DB_USER || "db"
+
+app.use(express.json({ limit: '10kb' }))
+
+app.get("/", (_: Request, res: Response) => {
+  res.send("Hello bozo")
+})
 
 let db = postgres({
   user: dbUser,
